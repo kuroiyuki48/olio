@@ -1,13 +1,3 @@
-/**
-* Template Name: Rapid - v2.2.0
-* Template URL: https://bootstrapmade.com/rapid-multipurpose-bootstrap-business-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
 body {
   background: #fff;
   color: #444;
@@ -599,6 +589,26 @@ section {
 
 /* Services Section
 --------------------------------*/
+
+/* Services */
+
+.card {
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.25);
+  border: 1px solid rgba(0,0,0,0.07);
+  margin: 0.25rem;
+}
+
+#services .service-card h2{
+  color: #413e66;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  text-align: center;
+
+}
+
 #services {
   padding: 60px 0 40px 0;
 }

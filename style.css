@@ -110,6 +110,18 @@
     border: 1px solid black;
 } */
 
+/* Services */
+
+.service-card {
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    background-color: black;
+    border: 1px solid rgba(0,0,0,0.07);
+}
+
+
 /* Navbar portofolio */
 
 .control ul li{
