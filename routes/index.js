@@ -3,22 +3,33 @@ var router = express.Router();
 var connection = require('../library/database');
 router.use(express.static("./public"))
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  // res.render('index', { title: 'Olio' });
-  //query
-  connection.query('SELECT * FROM portofolio ORDER BY id desc', function (err, rows) {
-      if (err) {
-          req.flash('error', err);
-          res.render('index', {
-              data: ''
-          });
-      } else {
-          res.render('index', {
-              data: rows
-          });
+
+function getPortofolio(req, res, next) {
+  var dbP = 'SELECT * FROM portofolio ORDER BY id desc';
+  connection.query(dbP, function(error, rows) {
+      if(rows.length !== 0) {
+          req.portofolio = rows;
+          return next();
       }
   });
-});
+}
 
+function getServices(req, res, next) {
+  var dbS = 'SELECT * FROM services ORDER BY id asc';
+  connection.query(dbS, function(error, rows) {
+      if(rows.length !== 0) {
+          req.services = rows;
+          return next();
+      }         
+  });
+}
+
+function renderHomepage(req, res) {
+  res.render('index', {
+      portofolio: req.portofolio,
+      services: req.services
+  });
+}
+
+router.get('/', getPortofolio, getServices,  renderHomepage);
 module.exports = router;

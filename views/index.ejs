@@ -90,51 +90,36 @@
       </div>
 
     </section><!-- End About Section -->
+
     <!-- Services -->
     <section id="services">
      <div class="container service-card">
-      <h2>Our Services</h2>
+      <h3>Our Services</h3>
       <div class="text-center">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque fugiat est consectetur et magni modi. Beatae possimus aut nesciunt quia numquam, quasi odio minus, at non placeat reprehenderit ipsum dolore.</p>
         <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, perspiciatis laborum placeat dignissimos quod voluptatum rerum itaque. Optio neque molestiae dolorem placeat. Optio reprehenderit explicabo quia rerum architecto nisi aperiam.</p>    
       </div>
       <div class="row flex justify-center">
-        <div class="col-lg-3">
-          <div class="card p-5">
-            
-              <i style=" color: #f3bc5d" class="bi bi-search display-4 text-center"></i>
-              <span class="font-weight-bold text-center py-3">User Research</span>
-              <span class="text-center">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore</span>
+
+        <% if(services.length){
+                                  
+          for(var i = 0; i< services.length; i++) {%>  
+            <div class="col-lg-3">
+              <div class="card p-5">
+                
+                  <i style=" color: #f3bc5d" class="<%= services[i].icon%> display-4 text-center"></i>
+                  <span class="font-weight-bold text-center py-3"><%= services[i].title%></span>
+                  <span class="text-center"><%= services[i].description%></span>
+              
+              </div>
+            </div>
+          <% }
           
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="card p-5">
-            
-              <i style=" color: #f3bc5d" class="bi bi-people-fill display-4 text-center"></i>
-              <span class="font-weight-bold text-center py-3">User Testing</span>
-              <span class="text-center">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore</span>
-          
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="card p-5">
-            
-              <i style=" color: #f3bc5d" class="bi bi-brush-fill display-4 text-center"></i>
-              <span class="font-weight-bold text-center py-3">Visual Design</span>
-              <span class="text-center">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore</span>
-          
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="card p-5">
-            
-              <i style=" color: #f3bc5d" class="bi bi-window display-4 text-center"></i>
-              <span class="font-weight-bold text-center py-3">Prototype</span>
-              <span class="text-center">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore</span>
-          
-          </div>
-        </div>
+      }else{ %>
+          <h5>Data Tidak Ditemukan</h5>
+      <% } %>  
+        
+      </div>
       </div>
      </div>
     </section>
@@ -238,35 +223,28 @@
         </div>
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-          <% if(data.length){
+        
+        <% if(portofolio.length){
                                     
-            for(var i = 0; i< data.length; i++) {%>  
-                <div class="col-lg-4 col-md-6 portfolio-item <%= data[i].kategori%>" data-wow-delay="0.1s">
-                  <div class="portfolio-wrap">
-                    <img src="assets/img/portofolio/<%= data[i].gambar%>" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                      <h4><a href="#"><%= data[i].title%></a></h4>
-                      <p><%= data[i].description%></p>
-                      <div>
-                        <a href="assets/img/portofolio/<%= data[i].gambar%>" class="link-preview venobox"
-                          data-gall="portfolioGallery" title="<%= data[i].kategori%>"><i class="ion ion-eye"></i></a>
-                      </div>
+          for(var i = 0; i< portofolio.length; i++) {%>  
+              <div class="col-lg-4 col-md-6 portfolio-item <%= portofolio[i].kategori%>" data-wow-delay="0.1s">
+                <div class="portfolio-wrap">
+                  <img src="assets/img/portofolio/<%= portofolio[i].gambar%>" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4><a href="#"><%= portofolio[i].title%></a></h4>
+                    <p><%= portofolio[i].description%></p>
+                    <div>
+                      <a href="assets/img/portofolio/<%= portofolio[i].gambar%>" class="link-preview venobox"
+                        data-gall="portfolioGallery" title="<%= portofolio[i].kategori%>"><i class="ion ion-eye"></i></a>
                     </div>
                   </div>
                 </div>
-            <% }
-            
-        }else{ %>
-            <tr>
-                <td colspan="6">
-                    <div class="alert alert-danger" role="alert">
-                        Data Tidak Ditemukan !
-                    </div>
-                </td>
-            </tr>
-        <% } %>  
-
+              </div>
+          <% }
+          
+      }else{ %>
+        <h5>Data Tidak Ditemukan</h5>
+      <% } %>  
         </div>
 
       </div>

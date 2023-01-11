@@ -11,6 +11,7 @@ var session = require('express-session');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var portofolioRouter = require('./routes/portofolio'); // <-- route portofolio
+var servicesRouter = require('./routes/services'); // <-- route services
 
 var app = express();
 
@@ -39,6 +40,7 @@ app.use(flash())
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/portofolio', portofolioRouter); // use route posts di Express
+app.use('/services', servicesRouter); // use route posts di Express
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

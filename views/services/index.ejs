@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Portofolio - Olio</title>
+    <title>Service - Olio</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <!-- icon bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
 <body style="background: lightgray">
 
@@ -25,15 +27,14 @@
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
                         <a class="btn btn-warning mb-3" href="/">KEMBALI</a>
-                        <a href="/portofolio/create" class="btn btn-md btn-success mb-3">TAMBAH PORTOFOLIO</a>
+                        <a href="/services/create" class="btn btn-md btn-success mb-3">TAMBAH SERVICE</a>
                         <table class="table table-bordered">
                             <thead>
                               <tr>
                                 <th scope="col">NO.</th>
                                 <th scope="col">TITLE</th>
                                 <th scope="col">DESCRIPTION</th>
-                                <th scope="col">KATEGORI</th>
-                                <th scope="col">GAMBAR</th>
+                                <th scope="col">ICON</th>
                                 <th scope="col">AKSI</th>
                               </tr>
                             </thead>
@@ -45,11 +46,10 @@
                                             <th scope="row" class="text-center"><%= (i+1) %></th>
                                             <td><%= data[i].title%></td>
                                             <td><%= data[i].description%></td>
-                                            <td><%= data[i].kategori%></td>
-                                            <td><%= data[i].gambar%></td>
+                                            <td><i style=" color: #f3bc5d" class="<%= data[i].icon%> display-5 text-center"></i></td>
                                             <td class="text-center">
-                                                <a href="/portofolio/edit/<%=data[i].id%>" class="btn btn-sm btn-primary">EDIT</a>
-                                                <a onclick="return alert('Are You sure?')" href="/portofolio/delete/<%=data[i].id%>" class="btn btn-sm btn-danger">HAPUS</a>
+                                                <a href="/services/edit/<%=data[i].id%>" class="btn btn-sm btn-primary">EDIT</a>
+                                                <a onclick="return alert('Are You sure?')" href="/services/delete/<%=data[i].id%>" class="btn btn-sm btn-danger">HAPUS</a>
                                             </td>
                                         </tr>
                                     <% }
