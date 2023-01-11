@@ -1,2 +1,2 @@
 # Olio Company
-![This is an image](../../assets/olio.jpg)
+![This is an image](https://github.com/kuroiyuki48/olio/blob/master/public/assets/olio.png)
